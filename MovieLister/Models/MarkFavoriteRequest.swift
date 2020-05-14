@@ -10,7 +10,7 @@ import Foundation
 import SimpleNetworking
 
 struct MarkFavoriteRequest : Model {
-    let mediaType: String
-    let mediaId: Int
-    let favorite: Bool
+  let mediaType: String
+  let mediaId: Int
+  let favorite: Bool
 }

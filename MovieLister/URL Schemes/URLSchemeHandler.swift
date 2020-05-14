@@ -9,14 +9,14 @@
 import UIKit
 
 protocol URLSchemeHandler {
-    var host: String { get }
-    func handleURL(context: UIOpenURLContext)
+  var host: String { get }
+  func handleURL(context: UIOpenURLContext)
 }
 
 struct URLSchemeHandlers {
-    static var registered: [URLSchemeHandler] {
-        return [
-            AuthenticationCallbackHandler.shared
-        ]
-    }
+  static var registered: [URLSchemeHandler] {
+    return [
+      AuthenticationCallbackHandler.shared
+    ]
+  }
 }

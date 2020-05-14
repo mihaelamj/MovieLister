@@ -10,53 +10,53 @@ import UIKit
 import SimpleNetworking
 
 class PopularMoviesViewController : UITableViewController {
+  
+  enum Section {
+    case main
+  }
+  
+  private var movies: [Movie] = []
+  private var datasource: UITableViewDiffableDataSource<Section, MovieCellModel>!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
-    enum Section {
-        case main
-    }
+    datasource = UITableViewDiffableDataSource(tableView: tableView, cellProvider: { (tableView, indexPath, movieCellModel) -> UITableViewCell? in
+      let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell") as! MovieCell
+      cell.configure(with: movieCellModel)
+      return cell
+    })
     
-    private var movies: [Movie] = []
-    private var datasource: UITableViewDiffableDataSource<Section, MovieCellModel>!
+    fetchMovies()
+  }
+  
+  private func fetchMovies() {
+    guard let config = MovieDBConfiguration.current else { return }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    MovieDB.api.send(request: .popularMovies({ result in
+      switch result {
         
-        datasource = UITableViewDiffableDataSource(tableView: tableView, cellProvider: { (tableView, indexPath, movieCellModel) -> UITableViewCell? in
-            let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell") as! MovieCell
-            cell.configure(with: movieCellModel)
-            return cell
-        })
-     
-        fetchMovies()
-    }
-    
-    private func fetchMovies() {
-        guard let config = MovieDBConfiguration.current else { return }
+        case .success(let page):
+          self.movies = page.results
+          var snapshot = NSDiffableDataSourceSnapshot<Section, MovieCellModel>()
+          snapshot.appendSections([.main])
+          let models = page.results.map { MovieCellModel(movie: $0, configuration: config) }
+          snapshot.appendItems(models, toSection: .main)
+          self.datasource.apply(snapshot)
         
-        MovieDB.api.send(request: .popularMovies({ result in
-            switch result {
-
-            case .success(let page):
-                self.movies = page.results
-                var snapshot = NSDiffableDataSourceSnapshot<Section, MovieCellModel>()
-                snapshot.appendSections([.main])
-                let models = page.results.map { MovieCellModel(movie: $0, configuration: config) }
-                snapshot.appendItems(models, toSection: .main)
-                self.datasource.apply(snapshot)
-
-            case .failure(let error):
-                print("Error: \(error)")
-
-            }
-
-        }))
-    }
-    
-    @IBSegueAction
-    private func showMovie(coder: NSCoder, sender: Any, segueIdentifier: String) -> MovieDetailViewController? {
-        guard let indexPath = tableView.indexPathForSelectedRow else { return nil }
-        let movie = movies[indexPath.row]
-        let movieVC = MovieDetailViewController(coder: coder, movie: movie)
-        return movieVC
-    }
+        case .failure(let error):
+          print("Error: \(error)")
+        
+      }
+      
+    }))
+  }
+  
+  @IBSegueAction
+  private func showMovie(coder: NSCoder, sender: Any, segueIdentifier: String) -> MovieDetailViewController? {
+    guard let indexPath = tableView.indexPathForSelectedRow else { return nil }
+    let movie = movies[indexPath.row]
+    let movieVC = MovieDetailViewController(coder: coder, movie: movie)
+    return movieVC
+  }
 }

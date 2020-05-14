@@ -10,6 +10,6 @@ import Foundation
 import SimpleNetworking
 
 struct CreateSessionResponse : Model {
-    let success: Bool
-    let sessionId: String
+  let success: Bool
+  let sessionId: String
 }

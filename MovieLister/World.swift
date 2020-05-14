@@ -9,8 +9,8 @@
 import Foundation
 
 struct World {
-    var sessionManager = SessionManager()
-    var accountManager = AccountManager()
+  var sessionManager = SessionManager()
+  var accountManager = AccountManager()
 }
 
 var Current = World()

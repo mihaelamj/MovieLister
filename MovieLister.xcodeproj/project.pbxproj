@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A9604205246749DA00062ACF /* MovieDBAPIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9604204246749DA00062ACF /* MovieDBAPIKey.swift */; };
 		B508735823774E07002F8E0D /* FetchConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B508735723774E07002F8E0D /* FetchConfigurationViewController.swift */; };
 		B508735A23775765002F8E0D /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B508735923775765002F8E0D /* APIError.swift */; };
 		B508735C23776BCE002F8E0D /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B508735B23776BCE002F8E0D /* MovieCell.swift */; };
@@ -29,7 +30,6 @@
 		B57596F42384E04000D9F538 /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57596F32384E04000D9F538 /* GenericResponse.swift */; };
 		B57596F62384E37500D9F538 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57596F52384E37500D9F538 /* World.swift */; };
 		B57596F82384E5AE00D9F538 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57596F72384E5AE00D9F538 /* AccountManager.swift */; };
-		B57CEB1923822E6500CC903B /* MovieDBAPIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57CEB1823822E6500CC903B /* MovieDBAPIKey.swift */; };
 		B57CEB1B23822F2100CC903B /* CreationSessionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57CEB1A23822F2100CC903B /* CreationSessionRequest.swift */; };
 		B5ABFB40239DB13C006B588A /* LoggingAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ABFB3F239DB13C006B588A /* LoggingAdapter.swift */; };
 		B5B950A123858E23007E45A9 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B950A023858E23007E45A9 /* RequestBuilder.swift */; };
@@ -75,6 +75,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A9604204246749DA00062ACF /* MovieDBAPIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDBAPIKey.swift; sourceTree = "<group>"; };
 		B508735723774E07002F8E0D /* FetchConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchConfigurationViewController.swift; sourceTree = "<group>"; };
 		B508735923775765002F8E0D /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		B508735B23776BCE002F8E0D /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
@@ -99,7 +100,6 @@
 		B57596F32384E04000D9F538 /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
 		B57596F52384E37500D9F538 /* World.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
 		B57596F72384E5AE00D9F538 /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
-		B57CEB1823822E6500CC903B /* MovieDBAPIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDBAPIKey.swift; sourceTree = "<group>"; };
 		B57CEB1A23822F2100CC903B /* CreationSessionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationSessionRequest.swift; sourceTree = "<group>"; };
 		B5ABFB3F239DB13C006B588A /* LoggingAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingAdapter.swift; sourceTree = "<group>"; };
 		B5B950A023858E23007E45A9 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
@@ -192,7 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				B56B5A6723691AA1008ECEB5 /* MovieDB.swift */,
-				B57CEB1823822E6500CC903B /* MovieDBAPIKey.swift */,
+				A9604204246749DA00062ACF /* MovieDBAPIKey.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -397,11 +397,11 @@
 				B5DCC43F23726669003A9082 /* MovieDBConfiguration.swift in Sources */,
 				B57596F22384E03000D9F538 /* MarkFavoriteRequest.swift in Sources */,
 				B5EC9816237891250075E016 /* AuthenticationCallbackHandler.swift in Sources */,
+				A9604205246749DA00062ACF /* MovieDBAPIKey.swift in Sources */,
 				B56B5A5323691A6E008ECEB5 /* AppDelegate.swift in Sources */,
 				B5EC98222378DF770075E016 /* AccountViewController.swift in Sources */,
 				B57596F42384E04000D9F538 /* GenericResponse.swift in Sources */,
 				B508735823774E07002F8E0D /* FetchConfigurationViewController.swift in Sources */,
-				B57CEB1923822E6500CC903B /* MovieDBAPIKey.swift in Sources */,
 				B57596F62384E37500D9F538 /* World.swift in Sources */,
 				B508735E23776C8F002F8E0D /* MovieCellModel.swift in Sources */,
 				B56B5A5523691A6E008ECEB5 /* SceneDelegate.swift in Sources */,

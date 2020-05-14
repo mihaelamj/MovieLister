@@ -10,5 +10,5 @@ import Foundation
 import SimpleNetworking
 
 struct CreateSessionRequest : Model {
-    let requestToken: String
+  let requestToken: String
 }

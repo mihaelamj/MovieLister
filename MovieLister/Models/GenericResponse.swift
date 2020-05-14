@@ -10,6 +10,6 @@ import Foundation
 import SimpleNetworking
 
 struct GenericResponse : Model {
-    let statusCode: Int
-    let statusMessage: String
+  let statusCode: Int
+  let statusMessage: String
 }

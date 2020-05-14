@@ -11,13 +11,13 @@ import SimpleNetworking
 import SafariServices
 
 class LoginViewController : UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
-    @IBAction func loginTapped(_ sender: UIButton) {
-        Current.sessionManager.startLogin(from: self)
-    }
+  }
+  
+  @IBAction func loginTapped(_ sender: UIButton) {
+    Current.sessionManager.startLogin(from: self)
+  }
 }

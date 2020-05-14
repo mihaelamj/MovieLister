@@ -9,28 +9,28 @@
 import Foundation
 
 struct MovieCellModel : Hashable {
-    let id: Int
-    let title: String
-    let year: String
-    let posterURL: URL?
+  let id: Int
+  let title: String
+  let year: String
+  let posterURL: URL?
+  
+  init(movie: Movie, configuration: MovieDBConfiguration) {
+    id = movie.id
+    title = movie.title
+    year = movie.year
     
-    init(movie: Movie, configuration: MovieDBConfiguration) {
-        id = movie.id
-        title = movie.title
-        year = movie.year
-        
-        let imageBase = configuration.images.secureBaseUrl
-        
-        let middleSizeIndex = configuration.images.posterSizes.count / 2
-        guard middleSizeIndex < configuration.images.posterSizes.count else {
-            posterURL = nil
-            return
-        }
-        let middleSize = configuration.images.posterSizes[middleSizeIndex]
-        
-        posterURL = movie.posterPath.flatMap {
-            imageBase.appendingPathComponent(middleSize)
-                .appendingPathComponent($0)
-        }
+    let imageBase = configuration.images.secureBaseUrl
+    
+    let middleSizeIndex = configuration.images.posterSizes.count / 2
+    guard middleSizeIndex < configuration.images.posterSizes.count else {
+      posterURL = nil
+      return
     }
+    let middleSize = configuration.images.posterSizes[middleSizeIndex]
+    
+    posterURL = movie.posterPath.flatMap {
+      imageBase.appendingPathComponent(middleSize)
+        .appendingPathComponent($0)
+    }
+  }
 }
